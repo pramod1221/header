@@ -1,0 +1,183 @@
+@import "reset.css";
+
+/* Some global settings */
+:root {
+  --white: white;
+  --black: black;
+  --blue: #03a2bb;
+  --lightgray: #4a4a4a;
+  --darkgray: #2c2c2c;
+  --font-family: "Helvetica", sans-serif;
+  --font-size: 16px;
+  --base-size: 1rem;
+  --max-width: 1440px;
+}
+
+::selection {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+body {
+  color: var(--darkgray);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.headerWrapper {
+  display: grid;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  background-color: #eff0f1;
+}
+
+.headerTextWrapper {
+  position: relative;
+  margin-block: 3rem;
+  isolation: isolate;
+  z-index: +1;
+}
+
+.headerTitle {
+  font-size: 1.5rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  position: relative;
+  letter-spacing: -0.1rem;
+}
+
+.headerTitle::after {
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--darkgray);
+}
+
+.titleP1 {
+  margin-left: 10%;
+}
+
+.titleP2 {
+  margin-left: 20%;
+}
+
+.headerTitle span {
+  font-weight: 700;
+  display: inline-block;
+}
+
+.headerCopy {
+  max-width: 80%;
+  margin-inline: auto;
+  display: grid;
+  place-content: center;
+  margin-top: 5%;
+  position: relative;
+  z-index: +1;
+}
+
+.headerCopy p {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.headerLink {
+  margin-top: 1rem;
+  max-width: 6rem;
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--white);
+  background-color: var(--darkgray);
+  padding: 0.5rem 1rem;
+}
+
+.headerImageWrapper {
+  position: relative;
+}
+
+.headerImage1 {
+  width: 100%;
+}
+
+.headerImage1 img {
+  width: 100%;
+}
+
+.headerImage2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 90%;
+  margin-left: auto;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  z-index: +1;
+}
+
+.headerImage2 img {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  box-shadow: 0 0 1rem var(--lightgray);
+}
+
+/* Small devices (upto 576px) */
+@media only screen and (max-width: 576px) {
+  /* Redefine variables for small devices here */
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  /* Redefine variables for tab devices here */
+
+  .headerWrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .headerTitleWrapper {
+    position: absolute;
+    width: min(65vw, calc(var(--max-width) * 0.65));
+    height: 100%;
+    display: grid;
+    align-content: center;
+    margin-top: -10%;
+  }
+
+  .headerTitle {
+    font-size: 3rem;
+  }
+
+  .headerCopy {
+    margin-left: min(6.5vw, calc(var(--max-width) * 0.065));
+    height: 100%;
+    margin-top: 10%;
+  }
+  .headerCopy p {
+    font-size: 1rem;
+  }
+}
+
+/* Redefine variables for tab portrait orientation devices here */
+@media only screen and (min-width: 576px) and (max-width: 1024px) {
+  .headerTitleWrapper {
+    margin-top: -15%;
+  }
+
+  .headerTitle {
+    font-size: 1.8rem;
+  }
+
+  .headerCopy {
+    font-size: 0.9rem;
+  }
+}
